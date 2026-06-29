@@ -39,7 +39,7 @@ void main() {
 }
 `;
 
-// shader de picking: desenha cada objeto com uma cor sólida = seu id
+// shader de picking - desenha cada objeto com uma cor sólida = seu id
 const pickingVS = `#version 300 es
 in vec4 a_position;
 uniform mat4 u_projection;

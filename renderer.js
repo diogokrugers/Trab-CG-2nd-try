@@ -28,7 +28,7 @@ function setupRenderer(canvas) {
   return true;
 }
 
-// thumbnails da lista de modelos (coluna da direita), desenhadas num framebuffer offscreen e copiadas pro canvas 2d de cada item
+// thumbnails da lista de modelos (na direita), desenhadas num framebuffer offscreen e copiadas pro canvas 2d de cada item
 const THUMB_SIZE = 96;
 let thumbFramebuffer, thumbTexture, thumbDepthBuffer;
 

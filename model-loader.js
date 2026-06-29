@@ -3,7 +3,7 @@
 const MODEL_NAMES = [
   "bread", "burger", "cheese", "chicken", "chips", "chocolate", "coffee",
   "cookie", "cupcake", "donut", "drink", "egg", "french_fries", "fried_egg",
-  "ham", "hot_dog", "ice_cream", "jelly", "ketchup", "milkshake", "mustard",
+  "ham", "ice_cream", "jelly", "ketchup", "milkshake", "mustard",
   "nachos", "nugget", "onion_rings", "pizza", "pizza_slide", "popcorn",
   "pretzel", "ramen", "ribs", "sauce_ketchup", "sauce_mustard", "small_cheese",
   "soda", "soup", "spring_roll", "sushi", "taco", "toast", "waffle",
@@ -51,15 +51,10 @@ async function loadModel(name) {
   }
   const whiteTexture = twgl.createTexture(gl, { src: [255, 255, 255, 255] });
 
-  // se o .mtl só define 1 material, se usa esse como fallback
-  const matNames = Object.keys(materials);
-  const fallbackMaterial = matNames.length === 1 ? materials[matNames[0]] : null;
-
   const parts = obj.geometries.map(({ material, data }) => {
     const bufferInfo = twgl.createBufferInfoFromArrays(gl, data);
     const vao = twgl.createVAOFromBufferInfo(gl, meshProgramInfo, bufferInfo);
-    const resolvedMaterial = materials[material] || fallbackMaterial;
-    const matInfo = { ...defaultMaterial, ...resolvedMaterial };
+    const matInfo = { ...defaultMaterial, ...materials[material] };
     return {
       bufferInfo,
       vao,
