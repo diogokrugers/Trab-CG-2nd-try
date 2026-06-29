@@ -1,0 +1,12 @@
+# Blender 4.0.2 MTL File: 'None'
+# www.blender.org
+
+newmtl Material.040
+Ns 430.287872
+Ka 0.633027 0.633027 0.633027
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 3
+map_Kd ../textures/textures_food.png
+map_d ../textures/textures_food.png

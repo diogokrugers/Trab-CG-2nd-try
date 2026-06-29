@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Editor de Cena - WebGL2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Menu: caixas de texto para selecionar o modelo na cena e editar suas transformações -->
+  <div id="menu">
+    <fieldset>
+      <legend>Objetos na cena</legend>
+      <select id="hierarchy-select" size="5"></select>
+      <button id="btn-delete">Remover selecionado</button>
+    </fieldset>
+
+    <fieldset id="props-fieldset">
+      <legend>Propriedades: <span id="selected-name">(nenhum)</span></legend>
+
+      <label><span>Pai</span>
+        <select id="parent-select"></select>
+      </label>
+
+      <label><span>Translação X</span>
+        <input type="number" id="t-x" step="0.01">
+        <input type="range" data-for="t-x" min="-3" max="3" step="0.01">
+      </label>
+      <label><span>Translação Y</span>
+        <input type="number" id="t-y" step="0.01">
+        <input type="range" data-for="t-y" min="-3" max="3" step="0.01">
+      </label>
+      <label><span>Translação Z</span>
+        <input type="number" id="t-z" step="0.01">
+        <input type="range" data-for="t-z" min="-3" max="3" step="0.01">
+      </label>
+
+      <label><span>Rotação X</span>
+        <input type="number" id="r-x" step="1">
+        <input type="range" data-for="r-x" min="-180" max="180" step="1">
+      </label>
+      <label><span>Rotação Y</span>
+        <input type="number" id="r-y" step="1">
+        <input type="range" data-for="r-y" min="-180" max="180" step="1">
+      </label>
+      <label><span>Rotação Z</span>
+        <input type="number" id="r-z" step="1">
+        <input type="range" data-for="r-z" min="-180" max="180" step="1">
+      </label>
+
+      <label><span>Escala X</span>
+        <input type="number" id="s-x" step="0.01">
+        <input type="range" data-for="s-x" min="0.01" max="5" step="0.01">
+      </label>
+      <label><span>Escala Y</span>
+        <input type="number" id="s-y" step="0.01">
+        <input type="range" data-for="s-y" min="0.01" max="5" step="0.01">
+      </label>
+      <label><span>Escala Z</span>
+        <input type="number" id="s-z" step="0.01">
+        <input type="range" data-for="s-z" min="0.01" max="5" step="0.01">
+      </label>
+
+      <hr>
+      <label><span>Cor RGB</span>
+        <input type="color" id="color-rgb">
+      </label>
+      <label><span>Alpha</span>
+        <input type="number" id="color-a" min="0" max="1" step="0.1">
+        <input type="range" data-for="color-a" min="0" max="1" step="0.1">
+      </label>
+
+      <hr>
+      <label><span>Animação</span>
+        <select id="anim-axis">
+          <option value="">desligada</option>
+          <option value="x">eixo X</option>
+          <option value="y">eixo Y</option>
+          <option value="z">eixo Z</option>
+        </select>
+      </label>
+      <label><span>Velocidade</span>
+        <input type="number" id="anim-speed" step="0.1" value="1">
+        <input type="range" data-for="anim-speed" min="-5" max="5" step="0.1">
+      </label>
+    </fieldset>
+  </div>
+
+  <!-- Cena: canvas WebGL2 -->
+  <div id="scene-col">
+    <canvas id="glcanvas"></canvas>
+    <div id="toolbar">
+      <button id="btn-save">Salvar cena (.json)</button>
+      <button id="btn-load">Carregar cena</button>
+      <input type="file" id="file-load" accept=".json" style="display:none">
+    </div>
+  </div>
+
+  <!-- Seleção de modelos: lista com preview 3D, clicar adiciona à cena -->
+  <div id="model-list"></div>
+
+</div>
+
+<script src="https://webgl2fundamentals.org/webgl/resources/twgl-full.min.js"></script>
+<script src="https://webgl2fundamentals.org/webgl/resources/m4.js"></script>
+<script src="obj-loader.js"></script>
+<script src="scene-graph.js"></script>
+<script src="shaders.js"></script>
+<script src="model-loader.js"></script>
+<script src="renderer.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+#app {
+  display: flex;
+  height: 100%;
+}
+
+/* ---- coluna do menu de propriedades (esquerda) ---- */
+#menu {
+  width: 270px;
+  overflow-y: auto;
+  border-right: 1px solid #000;
+  box-sizing: border-box;
+}
+#menu fieldset {
+  margin: 6px;
+  padding: 6px 8px;
+}
+#menu legend {
+  padding: 0 3px;
+}
+
+/* cada propriedade (label) é uma linha: nome | campo numérico | slider */
+#props-fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+#props-fieldset label > span {
+  flex: none;
+  width: 78px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#menu hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+#menu input[type=number] {
+  width: 52px;
+  flex: none;
+}
+#menu select {
+  flex: 1;
+  min-width: 0;
+}
+
+/* slider fino e discreto, sem estilo chamativo do browser */
+#menu input[type=range] {
+  flex: 1;
+  width: 70px;
+  height: 12px;
+  margin: 0;
+  accent-color: #555;
+}
+
+#hierarchy-select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---- coluna da cena (centro) ---- */
+#scene-col {
+  flex: 1;
+  position: relative;
+}
+#glcanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 4px;
+}
+
+/* ---- coluna de seleção de modelos (direita) ---- */
+#model-list {
+  width: 220px;
+  overflow-y: auto;
+  border-left: 1px solid #000;
+  box-sizing: border-box;
+}
+.model-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+.model-item:hover {
+  background: #eee;
+}
+.model-item canvas {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #999;
+}
