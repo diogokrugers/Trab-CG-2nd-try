@@ -1,3 +1,17 @@
+# Trabalho de CG - Editor de Cena em WebGL2
+
+Esse repositório representa a minha segunda tentativa de fazer o trabalho de CG, dessa vez usando o twgl.js e não usando modelos que façam o GitHub reclamar.
+
+## Como rodar
+
+Só ir pra pasta principal do projeto e rodar:
+
+```
+python3 -m http.server 8000
+```
+
+depois abrir `http://localhost:8000` no navegador.
+
 ## Estrutura dos arquivos
 
 ```
@@ -14,24 +28,8 @@ models/           os .obj e .mtl do pacote Fast Food (40 modelos)
 textures/         as 3 texturas (atlas) usadas pelos modelos
 ```
 
-`twgl.js` e `m4.js` **não estão na pasta** porque são carregados direto do CDN oficial do webgl2fundamentals, exatamente como o site faz nos exemplos:
-
-```html
-<script src="https://webgl2fundamentals.org/webgl/resources/twgl-full.min.js"></script>
-<script src="https://webgl2fundamentals.org/webgl/resources/m4.js"></script>
-```
-
-Isso significa que **é preciso estar com internet** pra essas duas linhas carregarem.
-
-## Como rodar
-
-Só ir pra pasta principal do projeto e rodar:
-
-```
-python3 -m http.server 8000
-```
-
-depois abra `http://localhost:8000` no navegador.
+`twgl.js` e `m4.js` não estão na pasta pois são carregados direto do CDN oficial do webgl2fundamentals, 
+ou seja, é preciso acesso à internet pra essas duas linhas carregarem.
 
 ## Se quiser usar outro pacote de modelos
 

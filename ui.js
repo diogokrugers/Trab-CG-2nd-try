@@ -222,8 +222,7 @@ async function loadScene(file) {
   allNodes = [];
   selectedNode = null;
 
-  // cria todos os nodes primeiro, depois liga os pais, pra não depender
-  // de ordem no arquivo
+  // cria todos os nodes primeiro, depois liga os pais, pra não depender de ordem no arquivo
   const idMap = {};
   for (const nd of data.nodes) {
     const model = await loadModel(nd.modelName);

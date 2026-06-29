@@ -2,7 +2,7 @@
 
 let gl, meshProgramInfo, pickingProgramInfo;
 let root;            // Node raiz invisível da cena
-let allNodes = [];   // todos os nodes (exceto root), na ordem de criação
+let allNodes = [];   // todos os nodes (exceto root), em ordem de criação
 let selectedNode = null;
 
 const cameraTarget = [0, 0, 0];
@@ -28,8 +28,7 @@ function setupRenderer(canvas) {
   return true;
 }
 
-// thumbnails da lista de modelos (coluna da direita), desenhadas num
-// framebuffer offscreen e copiadas pro canvas 2d de cada item
+// thumbnails da lista de modelos (coluna da direita), desenhadas num framebuffer offscreen e copiadas pro canvas 2d de cada item
 const THUMB_SIZE = 96;
 let thumbFramebuffer, thumbTexture, thumbDepthBuffer;
 
@@ -138,7 +137,7 @@ async function addInstanceToScene(name) {
   selectNode(node);
 }
 
-// ---- câmera orbital + picking ----
+// ---- câmera orbital e picking ----
 let mouseX = -1, mouseY = -1;
 let isDragging = false;
 let dragButton = -1;

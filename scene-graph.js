@@ -1,6 +1,6 @@
 "use strict";
 
-// Node baseado no https://webgl2fundamentals.org/webgl/lessons/webgl-scene-graph.html
+// Node é baseado no https://webgl2fundamentals.org/webgl/lessons/webgl-scene-graph.html
 let nextNodeId = 1;
 
 function Node(name) {
