@@ -23,6 +23,7 @@ function loadTexture(filename, baseHref) {
     });
   });
   textureCache[filename] = promise;
+  
   return promise;
 }
 
@@ -70,6 +71,7 @@ async function loadModel(name) {
 
   const model = { parts, center, radius };
   modelCache[name] = model;
+  
   return model;
 }
 

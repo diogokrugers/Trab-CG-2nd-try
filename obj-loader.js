@@ -2,7 +2,6 @@
 
 // baseado no https://webgl2fundamentals.org/webgl/lessons/webgl-load-obj.html
 function parseOBJ(text) {
-  // indices do obj começam em 1, então o índice 0 fica com lixo de propósito
   const objPositions = [[0, 0, 0]];
   const objTexcoords = [[0, 0]];
   const objNormals = [[0, 0, 0]];
@@ -114,7 +113,7 @@ function parseOBJ(text) {
     handler(parts, unparsedArgs);
   }
 
-  // remove arrays vazios (ex. objs sem normal/texcoord)
+  // remove arrays vazios (tipo objs sem normal ou texcoord)
   for (const g of geometries) {
     g.data = Object.fromEntries(
         Object.entries(g.data).filter(([, array]) => array.length > 0));
